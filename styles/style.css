@@ -1,0 +1,150 @@
+/* CSS é a linguagem que usamos para estilizar um documento HTML.
+- CSS descreve como os elementos HTML devem ser exibidos.
+- Este tutorial irá ensinar-lhe CSS do básico ao avançado.
+
+DICAS:
+- Para adicionar comentarios utilizamos crtl + k + c
+- UNIDADE DE MEDIDA rem - cada 1 rem é igual a 16 pixels */
+
+/* Importando fontes para o projeto pelo Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+/* Criando variaveis no HTML para edição de valores
+   https://colorhunt.co - para escolher paleta de cores */
+:root {
+    --cor-primaria: #04364A;
+    --cor-segundaria: #DAFFFB;
+    --cor-terciaria: #64CCC5;
+    --cor-hover: #176B87;
+
+    --fonte-primaria: 'Krona one', sans-serif;
+    --fonte-segundaria: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* height: 50vh; altura (100vh é igual 100% do viewport) */
+    background-color: var(--cor-primaria);
+    box-sizing: border-box;
+    color: var(--cor-segundaria);
+}
+
+.cabecalho {
+    padding: 3% 0% 0% 12%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 80px;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-segundaria);
+    font-size: 1.12rem;
+    font-weight: 600;
+    color: var(--cor-segundaria);
+    text-decoration: none;
+}
+
+.apresentacao {
+    padding: 8% 12%;
+    display: flex;  /* Posicionar os elementos de forma flex */
+    align-items: center;
+    justify-content: space-between;
+    gap: 75px;
+    /* flex-direction: column; */ 
+}
+
+.apresentacao__conteudo {
+    box-sizing: border-box;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 1.87rem;
+    font-family: var(--fonte-primaria);
+}
+
+.destaque-titulo {  /* Sempre que criamos classe, usamos o "." para falarmos que é uma classe */
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__texto {
+    font-size: 1rem;
+    font-family: var(--fonte-segundaria);
+}
+
+.apresentacao__links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+}
+
+.apresentacao__links__subtitulo {
+    font-family: var(--fonte-primaria);
+    font-weight: 400;
+    font-size: 1.12rem;
+}
+
+.apresentacao__links__link {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    background-color: none;
+    width: 50%;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 1.56rem;
+    padding: 15px 0;
+    text-decoration: none;
+    color: var(--cor-segundaria);
+    border: 2px solid var(--cor-terciaria);
+    font-family: var(--fonte-segundaria);
+    font-weight: 400;
+}
+
+.apresentacao__links__link:hover{
+    background-color: var(--cor-hover);
+}
+
+.apresentacao__imagem {
+    width: 50%;
+}
+
+.rodape {
+    color: var(--cor-primaria);
+    background-color: var(--cor-terciaria);
+    padding: 20px;
+    text-align: center;
+    font-family: var(--fonte-segundaria);
+    font-size: 1rem;
+}
+
+@media (max-width: 1100px) {
+    .cabecalho {
+        padding: 6%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+    
+    .apresentacao{
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+
+}
